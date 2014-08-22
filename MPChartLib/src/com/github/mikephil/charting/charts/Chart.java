@@ -879,10 +879,7 @@ public abstract class Chart extends View implements AnimatorUpdateListener {
             return false;
 
         // check if touch gestures are enabled
-        if (!mTouchEnabled)
-            return false;
-        else
-            return mListener.onTouch(this, event);
+        return mTouchEnabled && mListener.onTouch(this, event);
     }
 
     /**
