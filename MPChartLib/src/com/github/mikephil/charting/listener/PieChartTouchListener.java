@@ -71,7 +71,7 @@ public class PieChartTouchListener extends SimpleOnGestureListener implements On
             mode = LONGPRESS;
 //            ctx.showValue(arg0, matrix);
         }
-    };
+    }
     
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {

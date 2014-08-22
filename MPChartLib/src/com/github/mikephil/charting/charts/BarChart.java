@@ -308,10 +308,6 @@ public class BarChart extends BarLineChartBase {
                     // avoid drawing outofbounds values
                     if (isOffContentRight(mBarRect.left))
                         break;
-
-                    if (isOffContentLeft(mBarRect.right)) {
-                        continue;
-                    }
                 }
             }
         }

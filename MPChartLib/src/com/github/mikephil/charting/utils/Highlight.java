@@ -66,14 +66,6 @@ public class Highlight {
      * @return
      */
     public boolean equalTo(Highlight h) {
-
-        if (h == null)
-            return false;
-        else {
-            if (this.mDataSetIndex == h.mDataSetIndex && this.mXIndex == h.mXIndex)
-                return true;
-            else
-                return false;
-        }
+        return h != null && this.mDataSetIndex == h.mDataSetIndex && this.mXIndex == h.mXIndex;
     }
 }

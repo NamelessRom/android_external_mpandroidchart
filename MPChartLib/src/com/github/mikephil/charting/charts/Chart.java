@@ -2,7 +2,6 @@
 package com.github.mikephil.charting.charts;
 
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.content.ContentValues;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -18,7 +17,6 @@ import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore.Images;
 import android.text.TextUtils;

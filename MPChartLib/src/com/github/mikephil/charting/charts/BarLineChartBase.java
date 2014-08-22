@@ -297,7 +297,7 @@ public abstract class BarLineChartBase extends Chart {
         if (!mFixedYValues) {
             prepare();
         } else {
-            calcMinMax(mFixedYValues);
+            calcMinMax(true);
         }
     }
 
@@ -497,7 +497,7 @@ public abstract class BarLineChartBase extends Chart {
         else
             mValueFormatDigits = mValueDigitsToUse;
 
-        StringBuffer b = new StringBuffer();
+        StringBuilder b = new StringBuilder();
         for (int i = 0; i < mValueFormatDigits; i++) {
             if (i == 0)
                 b.append(".");
@@ -540,7 +540,7 @@ public abstract class BarLineChartBase extends Chart {
      */
     protected void prepareXLabels() {
 
-        StringBuffer a = new StringBuffer();
+        StringBuilder a = new StringBuilder();
 
         // float length = (int) (((float)
         // (mCurrentData.getXVals().get(0).length() + mCurrentData

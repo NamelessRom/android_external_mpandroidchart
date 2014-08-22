@@ -39,7 +39,7 @@ public abstract class Utils {
      */
     public static String formatDecimal(double number, int digits) {
 
-        StringBuffer a = new StringBuffer();
+        StringBuilder a = new StringBuilder();
         for (int i = 0; i < digits; i++) {
             if (i == 0)
                 a.append(".");
@@ -47,9 +47,7 @@ public abstract class Utils {
         }
 
         DecimalFormat nf = new DecimalFormat("###,###,###,##0" + a.toString());
-        String formatted = nf.format(number);
-
-        return formatted;
+        return nf.format(number);
     }
 
     /**
@@ -292,7 +290,7 @@ public abstract class Utils {
         int[] ret = new int[integers.size()];
 
         for (int i = 0; i < ret.length; i++) {
-            ret[i] = integers.get(i).intValue();
+            ret[i] = integers.get(i);
         }
 
         return ret;

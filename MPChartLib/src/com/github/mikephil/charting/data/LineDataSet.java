@@ -131,7 +131,7 @@ public class LineDataSet extends DataSet {
      * @return
      */
     public boolean isDashedLineEnabled() {
-        return mDashPathEffect == null ? false : true;
+        return mDashPathEffect != null;
     }
 
     /**

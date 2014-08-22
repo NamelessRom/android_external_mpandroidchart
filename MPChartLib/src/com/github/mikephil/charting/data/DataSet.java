@@ -251,10 +251,10 @@ public abstract class DataSet {
 
     @Override
     public String toString() {
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         buffer.append(toSimpleString());
         for (int i = 0; i < mYVals.size(); i++) {
-            buffer.append(mYVals.get(i).toString() + " ");
+            buffer.append(mYVals.get(i).toString()).append(" ");
         }
         return buffer.toString();
     }
@@ -266,8 +266,10 @@ public abstract class DataSet {
      * @return
      */
     public String toSimpleString() {
-        StringBuffer buffer = new StringBuffer();
-        buffer.append("DataSet, label: " + mLabel + ", entries: " + mYVals.size() + "\n");
+        StringBuilder buffer = new StringBuilder();
+        buffer.append("DataSet, label: ").append(mLabel)
+                .append(", entries: ").append(mYVals.size())
+                .append("\n");
         return buffer.toString();
     }
 

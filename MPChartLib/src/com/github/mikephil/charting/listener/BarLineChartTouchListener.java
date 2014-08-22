@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 
 import com.github.mikephil.charting.charts.BarLineChartBase;
+import com.github.mikephil.charting.data.ChartData;
 import com.github.mikephil.charting.data.DrawingContext;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
@@ -76,17 +77,16 @@ public class BarLineChartTouchListener extends SimpleOnGestureListener implement
             return true;
 
         mDrawingContext.init(mChart.getDrawListener(), mChart.isAutoFinishEnabled());
-        LineData data = null;
+        ChartData data = null;
         
-//        data = (LineData) mChart.getDataCurrent();
+        data = mChart.getDataCurrent();
 
         // Handle touch events here...
         switch (event.getAction() & MotionEvent.ACTION_MASK) {
             case MotionEvent.ACTION_DOWN:
                 if (event.getPointerCount() == 1 && mDrawingEnabled) {
                     if (mLastHighlighted != null) {
-                        Entry highlightedEntry = mChart.getDataCurrent().getEntryForHighlight(
-                                mLastHighlighted);
+                        Entry highlightedEntry = data.getEntryForHighlight(mLastHighlighted);
                         Entry currentHoveredEntry = mChart.getEntryByTouchPoint(event.getX(),
                                 event.getY());
                         if (highlightedEntry != null && highlightedEntry == currentHoveredEntry) {
@@ -171,7 +171,7 @@ public class BarLineChartTouchListener extends SimpleOnGestureListener implement
 
                     if (xIndex < 0)
                         xIndex = 0;
-                    if (xIndex >= data.getXValCount()) {
+                    if (data != null && xIndex >= data.getXValCount()) {
                         xIndex = data.getXValCount() - 1;
                     }
 
@@ -421,7 +421,7 @@ public class BarLineChartTouchListener extends SimpleOnGestureListener implement
         mChart.zoomOut(trans.x, trans.y);
         
         Log.i("BarlineChartTouch", "Longpress, Zooming Out, x: " + trans.x + ", y: " + trans.y);
-    };
+    }
 
     @Override
     public boolean onSingleTapUp(MotionEvent e) {

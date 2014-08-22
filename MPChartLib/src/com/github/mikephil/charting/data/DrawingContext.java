@@ -25,7 +25,7 @@ public class DrawingContext {
 	 * @param type
 	 *            the type of the new DataSet
 	 */
-	public void createNewDrawingDataSet(LineData chartData) {
+	public void createNewDrawingDataSet(ChartData chartData) {
 		if (mCurrentDrawingDataSet != null && mCurrentDrawingEntries != null) {
 			// if an old one exist, finish the other one first
 			finishNewDrawingEntry(chartData);
@@ -117,7 +117,7 @@ public class DrawingContext {
 	/**
 	 * Finishes a drawing entry and adds values at the beginning and the end to fill up the line
 	 */
-	public void finishNewDrawingEntry(LineData data) {
+	public void finishNewDrawingEntry(ChartData data) {
 		if (mAutoFinishDrawing && mCurrentDrawingEntries.size() > 0) {
 			Entry firstEntry = mCurrentDrawingEntries.get(0);
 			int xIndex = 0;
@@ -149,7 +149,7 @@ public class DrawingContext {
 		mCurrentDrawingEntries = null;
 	}
 
-	public void deleteLastDrawingEntry(LineData data) {
+	public void deleteLastDrawingEntry(ChartData data) {
 	    if(data == null) return;
 		data.getDataSets().remove(mCurrentDrawingDataSet);
 		mCurrentDrawingDataSet = null;
