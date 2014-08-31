@@ -2,6 +2,7 @@
 package com.github.mikephil.charting.utils;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 
@@ -46,6 +47,8 @@ public class Legend {
     /** the text size of the legend labels */
     private float mTextSize = 9f;
 
+    private int mTextColor = Color.BLACK;
+
     /** the size of the legend forms/shapes */
     private float mFormSize = 8f;
 
@@ -82,7 +85,7 @@ public class Legend {
 
     /**
      * Constructor. Provide colors and labels for the legend.
-     * 
+     *
      * @param colors
      * @param labels
      */
@@ -467,6 +470,14 @@ public class Legend {
      */
     public float getTextSize() {
         return mTextSize;
+    }
+
+    public void setTextColor(final int textColor) {
+        mTextColor = textColor;
+    }
+
+    public int getTextColor() {
+        return mTextColor;
     }
 
     /**

@@ -696,6 +696,8 @@ public abstract class Chart extends View implements ValueAnimator.AnimatorUpdate
 
         mLegendLabelPaint.setTextSize(mLegend.getTextSize());
 
+        mLegendLabelPaint.setColor(mLegend.getTextColor());
+
         float formSize = mLegend.getFormSize();
 
         // space between text and shape/form of entry
