@@ -5,8 +5,7 @@ android {
     buildToolsVersion '21.1.1'
     // resourcePrefix 'mpcht'
     defaultConfig {
-        applicationId 'com.github.mikephil.charting'
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 21
         versionCode 1
         versionName '1.0'
@@ -22,9 +21,16 @@ android {
     }
     buildTypes {
         release {
-            proguardFiles getDefaultProguardFile('proguard-android.txt')
-            minifyEnabled false
-            shrinkResources false
+            proguardFiles 'proguard.pro'
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+        }
+        debug {
+            proguardFiles 'proguard.pro'
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
         }
     }
     lintOptions {
@@ -34,5 +40,5 @@ android {
 
 dependencies {
     //compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-v4:21.0.2'
+    compile 'com.android.support:support-v13:21.0.2'
 }
