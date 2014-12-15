@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion '21.1.1'
+    buildToolsVersion '21.1.2'
     // resourcePrefix 'mpcht'
     defaultConfig {
         minSdkVersion 14
@@ -22,15 +22,15 @@ android {
     buildTypes {
         release {
             proguardFiles 'proguard.pro'
-            minifyEnabled true
-            shrinkResources true
-            zipAlignEnabled true
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
         }
         debug {
             proguardFiles 'proguard.pro'
-            minifyEnabled true
-            shrinkResources true
-            zipAlignEnabled true
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
         }
     }
     lintOptions {

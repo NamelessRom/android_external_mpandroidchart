@@ -10,7 +10,6 @@
 # of these optimizations on its own).
 -dontoptimize
 -dontpreverify
--dontshrink
 
 # Note: This may already be defined in the default "proguard-android-optimize.txt"
 # file in the SDK. If it is, then you don't need to duplicate it. See your
